@@ -55,7 +55,9 @@ dependencies:
   #cache
   shared_preferences: ^2.2.0
 
-  
+  #core
+  collection: any
+  equatable: ^2.0.5
 
   #states
   provider: ^6.0.5
