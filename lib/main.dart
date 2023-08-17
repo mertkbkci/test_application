@@ -2,13 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_application/303/feed_view.dart';
 import 'package:test_application/product/constant/project_items.dart';
 import 'package:test_application/product/global/resource_context.dart';
 import 'package:test_application/product/global/theme_notifier.dart';
-
-import '303/lottie_learn.dart';
-
+import 'package:test_application/product/navigator/navigator_custom.dart';
+import 'package:test_application/product/navigator/navigator_routes.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -51,7 +49,25 @@ class MyApp extends StatelessWidget {
       // ),
       // ), //birden çok app bar teması yapmak yerine kopyalar
 
-      home: const LottieLearn(),
+      //initialRoute:'/' ,
+      onUnknownRoute: (settings) => MaterialPageRoute(
+          builder: (context) => Scaffold(
+                appBar: AppBar(
+                  title: const Text('Error'),
+                ),
+                body: Center(
+                  child: Text('Route not found ${settings.name}'),
+                ),
+              )),
+      routes: NavigatorRoutes().items,
+      onGenerateRoute: NavigatorCustom().onGenerateRoute,
+      // {
+      //   "/": (context) => const LottieLearn(),
+      //   "/home": (context) => const NavigateHomeView(),
+      //   "/HomeDetail": (context) => const NavigateHomeDetailView(),
+      // "/profile": (context) => const NavigateProfileView()
+      // },
+      //home: const LottieLearn(),
     );
   }
 }

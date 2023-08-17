@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
+import 'package:test_application/product/navigator/navigator_routes.dart';
 
 import '../product/constant/lottie_items.dart';
 import '../product/global/theme_notifier.dart';
@@ -19,6 +20,12 @@ class _LottieLearnState extends State<LottieLearn> with TickerProviderStateMixin
   void initState() {
     super.initState();
     controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
+    navigateToHome();
+  }
+
+  Future<void> navigateToHome() async {
+    await Future.delayed(const Duration(seconds: 2));
+    Navigator.of(context).pushReplacementNamed(NavigateRoutes.home.withParaf);
   }
 
   @override
