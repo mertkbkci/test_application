@@ -59,6 +59,10 @@ dependencies:
   collection: any
   equatable: ^2.0.5
 
+  #context
+  kartal: ^3.3.0
+  
+
   #states
   provider: ^6.0.5
  

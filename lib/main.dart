@@ -6,6 +6,7 @@ import 'package:test_application/product/constant/project_items.dart';
 import 'package:test_application/product/global/resource_context.dart';
 import 'package:test_application/product/global/theme_notifier.dart';
 import 'package:test_application/product/navigator/navigator_custom.dart';
+import 'package:test_application/product/navigator/navigator_manager.dart';
 import 'package:test_application/product/navigator/navigator_routes.dart';
 
 void main() {
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
               )),
       routes: NavigatorRoutes().items,
       onGenerateRoute: NavigatorCustom().onGenerateRoute,
+      navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
       // {
       //   "/": (context) => const LottieLearn(),
       //   "/home": (context) => const NavigateHomeView(),
