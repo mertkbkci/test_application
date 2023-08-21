@@ -7,7 +7,8 @@ import 'package:test_application/product/global/resource_context.dart';
 import 'package:test_application/product/global/theme_notifier.dart';
 import 'package:test_application/product/navigator/navigator_custom.dart';
 import 'package:test_application/product/navigator/navigator_manager.dart';
-import 'package:test_application/product/navigator/navigator_routes.dart';
+
+import '404/bloc/feature/login/view/login_view.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
                   child: Text('Route not found ${settings.name}'),
                 ),
               )),
-      routes: NavigatorRoutes().items,
+      //routes: NavigatorRoutes().items,
       onGenerateRoute: NavigatorCustom().onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
       // {
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
       //   "/HomeDetail": (context) => const NavigateHomeDetailView(),
       // "/profile": (context) => const NavigateProfileView()
       // },
-      //home: const LottieLearn(),
+      home: const LoginView(),
     );
   }
 }

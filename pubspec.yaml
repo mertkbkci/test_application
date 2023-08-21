@@ -65,6 +65,9 @@ dependencies:
 
   #states
   provider: ^6.0.5
+
+  #network
+  vexana: any
  
 
 dev_dependencies:

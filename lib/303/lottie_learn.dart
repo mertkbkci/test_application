@@ -25,6 +25,7 @@ class _LottieLearnState extends State<LottieLearn> with TickerProviderStateMixin
 
   Future<void> navigateToHome() async {
     await Future.delayed(const Duration(seconds: 2));
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacementNamed(NavigateRoutes.home.withParaf);
   }
 
